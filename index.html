@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Todo App</h1>
+        <p class="tagline">Keep track of what you need to do.</p>
+      </header>
+
+      <form id="todo-form" class="todo-form">
+        <label for="todo-input" class="visually-hidden">New todo</label>
+        <input
+          id="todo-input"
+          type="text"
+          name="title"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter todos">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">
+            Active
+          </button>
+          <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">
+            Completed
+          </button>
+        </div>
+        <p id="todo-count" class="todo-count" aria-live="polite"></p>
+      </div>
+
+      <p id="empty-state" class="empty-state" hidden>No todos to show.</p>
+
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <div class="footer-actions">
+        <button type="button" id="clear-completed">Clear completed</button>
+      </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
